@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <div class="container-fluid">
+      <a class="navbar-brand" href=""><img id="mainLogo"
+        src="https://scontent.xx.fbcdn.net/v/t1.15752-9/275140876_2777081439252039_198760313899132656_n.png?_nc_cat=103&ccb=1-5&_nc_sid=aee45a&_nc_ohc=-PoW_JDl3tcAX_u_AFh&_nc_ad=z-m&_nc_cid=0&_nc_ht=scontent.xx&oh=03_AVJZKNENf5fo9dPSwJEeJMoQjJjVzw-a4HXrGM_EFL3Stw&oe=6260BE30"></a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <hr>
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          <li class="nav-item" [hidden]="util.user">
+            <a class="nav-link" href="#" (click)="navTo($event,'/login')" >Login</a>
+          </li>
+          <li class="nav-item" [hidden]="!util.user">
+            <a class="nav-link" href="#">Logout</a>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" routerLink="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              Categories
+            </a>
+            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+              <li><a class="dropdown-item" href="#" (click)="navTo($event,'/list','cpu')">CPU</a></li>
+              <li><a class="dropdown-item" href="#" (click)="navTo($event,'/list','cpucooler')">CPU Cooler</a></li>
+              <li><a class="dropdown-item" href="#" (click)="navTo($event,'/list','motherboard')">Motherboard</a></li>
+              <li><a class="dropdown-item" href="#" (click)="navTo($event,'/list','memory')">Memory</a></li>
+              <li><a class="dropdown-item" href="#" (click)="navTo($event,'/list','storage')">Storage</a></li>
+              <li><a class="dropdown-item" href="#" (click)="navTo($event,'/list','gpu')">Video Card</a></li>
+              <li><a class="dropdown-item" href="#" (click)="navTo($event,'/list','case')">Case</a></li>
+              <li><a class="dropdown-item" href="#" (click)="navTo($event,'/list','psu')">Power Supply</a></li>
+              <li><a class="dropdown-item" href="#" (click)="navTo($event,'/list','os')">Operating System</a></li>
+              <li><a class="dropdown-item" href="#" (click)="navTo($event,'/list','monitor')">Monitor</a></li>
+              <li><hr class="dropdown-divider"></li>
+              <li><a class="dropdown-item" routerLink="#">Need Help? Click Here!</a></li>
+            </ul>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" routerLink="/select">Build PC</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link disabled" routerLink="/wish" tabindex="-1" aria-disabled="true">Wish List</a>
+          </li>
+        </ul>
+  
+        <form class="d-flex">
+          <a href="#" (click)="navTo($event,'/cart')"><img id="cartIcon" src="https://cdn.imgbin.com/24/18/25/imgbin-product-shopping-cart-supermarket-logo-logo-super-mercado-FtR9tbYittHi9rncuUPrGSg2S.jpg"></a>
+          <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+          <button class="btn btn-outline-success" type="submit">Search</button>
+        </form>
+        <br>
+      </div>
+    </div>
+  </nav>
+</body>
+</html>

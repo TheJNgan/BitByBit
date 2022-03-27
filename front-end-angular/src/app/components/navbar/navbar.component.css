@@ -1,0 +1,18 @@
+.dropdown-menu{
+    border-style:double;
+    border-color: cyan;
+}
+#cartIcon{
+    width: 50px;
+    height: 40px;
+    border-radius: 100px;
+}
+.container-fluid{
+    border-style:double;
+    border-color: cyan;
+    background-color: rgb(247, 228, 255);
+}
+#mainLogo{
+    width: 250px;
+    height: 75px;
+}

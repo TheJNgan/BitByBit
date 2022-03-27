@@ -1,0 +1,27 @@
+.header{
+    margin: auto;
+    text-align: center;
+}
+table{
+    border-style:solid;
+    text-align: center;
+    width: 750px;
+    margin-left: auto;
+    margin-right: auto;
+}
+thead{
+    border-style: solid;
+}
+.div-body{
+    padding-top: 50px;
+}
+.rowHeader{
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    font-size: large;
+}
+tr:hover{
+    background-color: rgb(226, 223, 223);
+}
+body{
+    background-color:honeydew;
+}

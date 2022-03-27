@@ -1,0 +1,19 @@
+.page-footer{
+    background-color: rgb(219, 80, 29);
+    border-style: double;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+ 
+}
+.sign{
+    border-radius: 100px;
+    
+}
+.sign:hover{
+    background-color: rgb(136, 58, 136);
+    transition: 2s;
+}
+.logo{
+    float:left;
+}

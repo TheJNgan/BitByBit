@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <base href="/list/">
+</head>
+<body>
+  <h1>{{categorytitle}}</h1>
+  <ul *ngFor="let components of myrows">
+    <img src="{{ components.imageUrl }}" alt="ItemPicture">
+    <li>{{ components.name }} {{ components.side_panel_window }} {{ components.type }} {{ components.power_supply }} {{ components.color }}</li>
+    <li>{{ components.price_usd | currency }}</li>
+    <li>{{ components.rating }} Stars ({{ components.rating_count }})</li>
+    <li><button (click)="addToCart(components,$event)">Add to Cart</button></li><hr>
+  </ul>
+
+</body>
+</html>

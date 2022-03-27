@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <base href="/cart">
+  </head>
+  <body>
+    <div class="wrap cf">
+      <h1 class="projTitle">Summary</h1>
+      <div class="heading cf">
+        <h1>My Cart</h1>
+        <a href="/list" class="continue">Continue Shopping</a>
+      </div>
+      <div class="cart">
+        <ul *ngFor="let components of util.cart;let i = index ">
+          <img src="{{ components.imageUrl }}" alt="ItemPicture">
+          <li>{{ components.name }} {{ components.side_panel_window }} {{ components.type }} {{ components.power_supply }} {{ components.color }}</li>
+          <li>{{ components.price_usd | currency }}</li>
+          <div class="cartSection removeWrap">
+            <a href="#" class="remove" (click)="remove(components,i,$event)">Remove</a>
+          </div>
+          <hr>
+        </ul>
+        <!--<ul class="cartWrap">
+          <li class="items odd">
+
+            <div class="infoWrap"> 
+              <div class="cartSection">
+                <img src="http://lorempixel.com/output/technics-q-c-300-300-4.jpg" alt="" class="itemImg" />
+                <p class="itemNumber">#Picture</p>
+                <h3>Item Name 1</h3>
+
+                <p> <input type="text"  class="qty" placeholder="Quantity"/> x $5.00</p>
+
+                <p class="stockStatus"> In Stock</p>
+              </div>  
+
+
+              <div class="prodTotal cartSection">
+                <p>$15.00</p>
+              </div>
+              <div class="cartSection removeWrap">
+                <a href="#" class="remove">Remove</a>
+              </div>
+            </div>
+          </li>
+          <li class="items even">
+
+            <div class="infoWrap"> 
+              <div class="cartSection">
+
+                <img src="http://lorempixel.com/output/technics-q-c-300-300-4.jpg" alt="" class="itemImg" />
+                <p class="itemPicture">#Picture</p>
+                <h3>Item Name 2</h3>
+
+                <p> <input type="text"  class="qty" placeholder="Quantity"/> x $5.00</p>
+
+                <p class="stockStatus"> In Stock</p>
+              </div>  
+
+
+              <div class="prodTotal cartSection">
+                <p>$15.00</p>
+              </div>
+              <div class="cartSection removeWrap">
+                <a href="#" class="remove">Remove</a>
+              </div>
+            </div>
+          </li>
+
+          <li class="items odd">
+            <div class="infoWrap"> 
+              <div class="cartSection">
+
+                <img src="http://lorempixel.com/output/technics-q-c-300-300-4.jpg" alt="" class="itemImg" />
+                <p class="itemNumber">#Picture</p>
+                <h3>Item Name 3</h3>
+
+                <p> <input type="text"  class="qty" placeholder="Quantity"/> x $5.00</p>
+
+                <p class="stockStatus out"> Out of Stock</p>
+              </div>  
+
+
+              <div class="prodTotal cartSection">
+                <p>$15.00</p>
+              </div>
+              <div class="cartSection removeWrap">
+                <a href="#" class="remove">Remove</a>
+              </div>
+            </div>
+          </li>
+          <li class="items even">
+            <div class="infoWrap"> 
+              <div class="cartSection info">
+
+                <img src="http://lorempixel.com/output/technics-q-c-300-300-4.jpg" alt="" class="itemImg" />
+                <p class="itemPicture">#Picture</p>
+                <h3>Item Name 4</h3>
+
+                <p> <input type="text"  class="qty" placeholder="Quantity"/> x $5.00</p>
+
+                <p class="stockStatus"> In Stock</p>
+
+              </div>  
+
+
+              <div class="prodTotal cartSection">
+                <p>$15.00</p>
+              </div>
+
+              <div class="cartSection removeWrap">
+                <a href="#" class="remove">Remove</a>
+              </div>
+            </div>
+          </li>
+
+        </ul> -->
+      </div>
+      <div class="subtotal cf">
+        <ul>
+          <li class="totalRow"><span class="label">Subtotal</span><span class="value">${{subTotal}}</span></li>
+          <li class="totalRow"><span class="label">Shipping</span><span class="value">${{shipping}}</span></li>
+          <li class="totalRow"><span class="label">Tax</span><span class="value">${{tax}}</span></li>
+          <li class="totalRow final"><span class="label">Total</span><span class="value">${{total}}</span></li>
+          <li class="totalRow">
+            <a href="#" class="btn continue" (click)="checkout($event)">Checkout</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </body>
+</html>
