@@ -66,7 +66,7 @@ export class CartComponent implements OnInit {
         this.subTotal += item.price_usd;
       }
       this.tax = this.subTotal * 0.075;
-      this.total = this.subTotal + this.tax + this.shipping;
+      this.total = this.subTotal + this.tax + this.shipping
     }
   }
 }
