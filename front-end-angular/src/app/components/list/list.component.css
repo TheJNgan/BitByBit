@@ -1,15 +1,23 @@
-body{
-    background-color:honeydew;
+body {
+    background: linear-gradient(to right, #c04848, #480048);
+    min-height: 100vh
 }
-ul{
-    padding-left: 50px;
-    padding-top: 25px;
-    list-style-type: none;
-    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+
+.text-gray {
+    color: #aaa
 }
-h1{
-    padding-left: 50px;
+.add{
+    float: right;
+    width: 10px;
+    overflow: hidden;
+    color: rgb(247, 235, 235);
+    margin-top: 10px;
+    border-radius: 10px;
 }
-ul:hover{
-    background-color: rgb(215, 238, 215);
+.add:hover{
+    transition: 1s;
+    background-color: green;
+    width: 50px;
+    display: grid;
+    color: black;
 }

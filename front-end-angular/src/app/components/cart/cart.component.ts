@@ -59,18 +59,14 @@ export class CartComponent implements OnInit {
   }
 
   calculateTotal() {
-    this.shipping = 5;
-    this.tax = 4;
-    this.subTotal = 0;
-    for(let item of this.util.cart) {
-      this.subTotal += item.price_usd;
+    if(this.util.cart.length > 0){
+      this.shipping = 5;
+      this.subTotal = 0;
+      for(let item of this.util.cart) {
+        this.subTotal += item.price_usd;
+      }
+      this.tax = this.subTotal * 0.075;
+      this.total = this.subTotal + this.tax + this.shipping;
     }
-    this.total = this.subTotal + this.tax + this.shipping;
   }
-
-
-
-
-
-  
 }
