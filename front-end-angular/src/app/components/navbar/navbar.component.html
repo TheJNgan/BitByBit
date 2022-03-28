@@ -9,7 +9,7 @@
 <body>
   <nav class="navbar navbar-expand-lg navbar-light bg-light">
     <div class="container-fluid">
-      <a class="navbar-brand" href=""><img id="mainLogo"
+      <a class="navbar-brand" routerLink=""><img id="mainLogo"
         src="https://scontent.xx.fbcdn.net/v/t1.15752-9/275140876_2777081439252039_198760313899132656_n.png?_nc_cat=103&ccb=1-5&_nc_sid=aee45a&_nc_ohc=-PoW_JDl3tcAX_u_AFh&_nc_ad=z-m&_nc_cid=0&_nc_ht=scontent.xx&oh=03_AVJZKNENf5fo9dPSwJEeJMoQjJjVzw-a4HXrGM_EFL3Stw&oe=6260BE30"></a>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
@@ -18,7 +18,7 @@
         <hr>
         <ul class="navbar-nav me-auto mb-2 mb-lg-0">
           <li class="nav-item" [hidden]="util.user">
-            <a class="nav-link" href="#" (click)="navTo($event,'/login')" >Login</a>
+            <a class="nav-link" routerLink="#" (click)="navTo($event,'/login')" >Login</a>
           </li>
           <li class="nav-item" [hidden]="!util.user">
             <a class="nav-link" href="#">Logout</a>
@@ -51,7 +51,7 @@
         </ul>
   
         <form class="d-flex">
-          <a href="#" (click)="navTo($event,'/cart')"><img id="cartIcon" src="https://cdn.imgbin.com/24/18/25/imgbin-product-shopping-cart-supermarket-logo-logo-super-mercado-FtR9tbYittHi9rncuUPrGSg2S.jpg"></a>
+          <a routerLink="#" (click)="navTo($event,'/cart')"><img id="cartIcon" src="https://cdn.imgbin.com/24/18/25/imgbin-product-shopping-cart-supermarket-logo-logo-super-mercado-FtR9tbYittHi9rncuUPrGSg2S.jpg"></a>
           <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
           <button class="btn btn-outline-success" type="submit">Search</button>
         </form>

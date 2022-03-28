@@ -5,14 +5,14 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <base href="/cart">
+    <base routerLink="/cart">
   </head>
   <body>
     <div class="wrap cf">
       <h1 class="projTitle">Summary</h1>
       <div class="heading cf">
         <h1>My Cart</h1>
-        <a href="/list" class="continue">Continue Shopping</a>
+        <a routerLink="/list" class="continue">Continue Shopping</a>
       </div><br><br>
       <div class="cart">
         <ul *ngFor="let components of util.cart;let i = index ">
@@ -20,7 +20,7 @@
           <li>{{ components.name }} {{ components.side_panel_window }} {{ components.type }} {{ components.power_supply }} {{ components.color }}</li>
           <li>{{ components.price_usd | currency }}</li>
           <div class="cartSection removeWrap">
-            <a href="#" class="remove" (click)="remove(components,i,$event)">Remove</a>
+            <a routerLink="#" class="remove" (click)="remove(components,i,$event)">Remove</a>
           </div>
           <hr>
         </ul>
@@ -127,7 +127,7 @@
           <li class="totalRow"><span class="label"><strong>Tax: </strong></span><span class="value">{{tax | currency}}</span></li>
           <li class="totalRow final"><span class="label"><h3>Total: </h3></span><span class="value"><h1>{{total | currency}}</h1></span></li>
           <li class="totalRow">
-            <a href="#" class="btn continue" (click)="checkout($event)">Checkout</a>
+            <a routerLink="/home" class="btn continue" (click)="checkout($event)">Checkout</a>
           </li>
         </ul>
       </div>
