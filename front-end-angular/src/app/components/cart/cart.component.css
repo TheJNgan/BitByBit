@@ -27,11 +27,14 @@ body {
 .cf:after {clear: both;}
 .cf {*zoom: 1;}
 .wrap {
+  border: 2px solid black;
+  border-radius: 10px;
   width: 75%;
   max-width: 960px;
   margin: 0 auto;
-  padding: 5% 0;
+  padding: 25px;
   margin-bottom: 5em;
+  background-color: white;
 }
 
 .projTitle {

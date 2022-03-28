@@ -1,21 +1,52 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <base href="/list/">
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
 </head>
 <body>
-  <h1>{{categorytitle}}</h1>
-  <ul *ngFor="let components of myrows">
-    <img src="{{ components.imageUrl }}" alt="ItemPicture">
-    <li>{{ components.name }} {{ components.side_panel_window }} {{ components.type }} {{ components.power_supply }} {{ components.color }}</li>
-    <li>{{ components.price_usd | currency }}</li>
-    <li>{{ components.rating }} Stars ({{ components.rating_count }})</li>
-    <li><button (click)="addToCart(components,$event)">Add to Cart</button></li><hr>
-  </ul>
-
+  <div class="container py-5">
+    <div class="row text-center text-white mb-5">
+        <div class="col-lg-7 mx-auto">
+            <h1 class="display-4">{{categorytitle}}</h1>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-lg-8 mx-auto">
+            <!-- List group-->
+            <ul *ngFor="let components of myrows" class="list-group shadow">
+                <!-- list group item-->
+                <li class="list-group-item">
+                    <!-- Custom content-->
+                    <div class="media align-items-lg-center flex-column flex-lg-row p-3">
+                        <div class="media-body order-2 order-lg-1">
+                            <h5 class="mt-0 font-weight-bold mb-2">{{ components.name }}</h5>
+                            <p class="font-italic text-muted mb-0 small">{{ components.maximum_supported_memory }} {{ components.wattage }} {{ components.efficiency_rating }} {{ components.modular }} {{ components.chipset }} {{ components.memory }} {{ components.capacity }} {{ components.modules }} {{ components.speed }} {{ components.socket_cpu }} {{ components.first_word_latency }} {{ components.form_factor }} {{ components.memory_max }} {{ components.socket }} {{ components.core_count }} {{ components.core_clock }} {{ components.integrated_graphics }} {{ components.fan_rpm }} {{ components.interface }} {{ components.cache }} {{ components.noise_level }} {{ components.radiator_size }} {{ components.side_panel_window }} {{ components.type }} {{ components.power_supply }}  {{ components.length }} {{ components.color }}</p>
+                            <div class="d-flex align-items-center justify-content-between mt-1">
+                                <h6 class="font-weight-bold my-2"><strong>{{ components.price_usd | currency }}</strong></h6>
+                                <ul class="list-inline small">
+                                    <li class="list-inline-item m-0"><i class="fa fa-star text-success">Rating:</i></li><br>
+                                    <li class="list-inline-item m-0"><i class="fa fa-star text-success">{{ components.rating }} Stars ({{ components.rating_count }})</i></li>
+                                </ul>
+                            </div>
+                        </div><img src="{{ components.imageUrl }}" alt="ItemPicture">
+                        <button class="add" (click)="addToCart(components,$event)">Add to Cart</button>
+                    </div> <!-- End -->
+                </li> <!-- End -->
+            </ul> <!-- End -->
+        </div>
+    </div>
+  </div>
+    <!-- <h1>{{categorytitle}}</h1>
+    <ul *ngFor="let components of myrows">
+      <img src="{{ components.imageUrl }}" alt="ItemPicture">
+      <li>{{ components.name }} {{ components.side_panel_window }} {{ components.type }} {{ components.power_supply }} {{ components.color }}</li>
+      <li>{{ components.price_usd | currency }}</li>
+      <li>{{ components.rating }} Stars ({{ components.rating_count }})</li>
+      <li><button (click)="addToCart(components,$event)">Add to Cart</button></li><hr>
+    </ul> -->
+  
 </body>
 </html>
